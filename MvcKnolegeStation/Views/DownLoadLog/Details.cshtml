@@ -1,0 +1,36 @@
+﻿@model MvcKnolegeStation.Models.DownLoadLogModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DownLoadLogModels</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_iKnolegeModelsId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_iKnolegeModelsId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_iDownLoadCount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_iDownLoadCount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_strDetail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_strDetail)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

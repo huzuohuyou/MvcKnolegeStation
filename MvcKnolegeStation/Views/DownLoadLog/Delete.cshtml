@@ -1,0 +1,39 @@
+﻿@model MvcKnolegeStation.Models.DownLoadLogModels
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>DownLoadLogModels</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_iKnolegeModelsId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_iKnolegeModelsId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_iDownLoadCount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_iDownLoadCount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_strDetail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_strDetail)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

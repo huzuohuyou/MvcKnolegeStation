@@ -1,0 +1,50 @@
+﻿@model MvcKnolegeStation.Models.KnolegeModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>KnolegeModels</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_strUserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_strUserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_strTitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_strTitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_strDesc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_strDesc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_strPath)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_strPath)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_dateUploadTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_dateUploadTime)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

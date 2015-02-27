@@ -1,0 +1,53 @@
+﻿@model MvcKnolegeStation.Models.DownLoadLogModels
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>DownLoadLogModels</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.m_iKnolegeModelsId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.m_iKnolegeModelsId)
+            @Html.ValidationMessageFor(model => model.m_iKnolegeModelsId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.m_iDownLoadCount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.m_iDownLoadCount)
+            @Html.ValidationMessageFor(model => model.m_iDownLoadCount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.m_strDetail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.m_strDetail)
+            @Html.ValidationMessageFor(model => model.m_strDetail)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

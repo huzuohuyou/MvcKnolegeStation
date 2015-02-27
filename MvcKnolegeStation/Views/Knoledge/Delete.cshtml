@@ -1,0 +1,53 @@
+﻿@model MvcKnolegeStation.Models.KnolegeModels
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>KnolegeModels</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_strUserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_strUserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_strTitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_strTitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_strDesc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_strDesc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_strPath)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_strPath)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.m_dateUploadTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.m_dateUploadTime)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

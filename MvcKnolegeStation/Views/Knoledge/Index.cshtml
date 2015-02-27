@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" type="text/css" href="../../Scripts/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../Scripts/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../../Scripts/demo/demo.css">
+<script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
+<script type="text/javascript" src="../../Scripts/jquery.easyui.min.js"></script>
+<p>
+    @Html.ActionLink("Create New", "CreateItem")
+</p>
+<table class="easyui-datagrid" style="width: 700px; height: 250px">
+    <thead>
+        <tr>
+            <th data-options="field:'itemid',width:120">
+                UserId
+            </th>
+            <th data-options="field:'productid',width:120">
+                Title
+            </th>
+            <th data-options="field:'listprice',width:120,align:'right'">
+                Desc
+            </th>
+            <th data-options="field:'unitcost',width:120,align:'right'">
+                Path
+            </th>
+            <th data-options="field:'attr1',width:120">
+                UploadTime
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in ViewBag.KnoledgeSet)
+    {
+        <tr>
+            <td>
+                @item["m_strUserId"]
+            </td>
+            <td>
+                @item["m_strTitle"]
+            </td>
+            <td>
+                @item["m_strDesc"]
+            </td>
+            <td>
+                @item["m_strPath"]
+            </td>
+            <td>
+                @item["m_dateUploadTime"]
+            </td>
+        </tr>
+    }
+</table>
