@@ -20,7 +20,8 @@ namespace MvcKnolegeStation.Controllers
         public ActionResult Index()
         {
             string _strSql = "select * from knoledge";
-            DataTable _dtKnoledgeSet = CommonFunction.OleExecuteBySQL(_strSql, new Dictionary<string, string>(), "KnoledgeSet");
+            //DataTable _dtKnoledgeSet = CommonFunction.OleExecuteBySQL(_strSql, new SortedDictionary<string, string>(), "KnoledgeSet");
+            DataTable _dtKnoledgeSet = CommonFunction.OraExecuteBySQL(_strSql, new Dictionary<string, string>(), "KnoledgeSet");
             List<DataRow> _listKnoledgeName = new List<DataRow>();
             foreach (DataRow item in _dtKnoledgeSet.Rows)
             {
@@ -48,7 +49,8 @@ namespace MvcKnolegeStation.Controllers
 
         public ActionResult Create()
         {
-            return View();
+
+            return View("Create");
         }
 
         //
@@ -67,8 +69,24 @@ namespace MvcKnolegeStation.Controllers
             return View(knolegemodels);
         }
 
-        public ActionResult CreateItem()
+        public ActionResult CreateItem(string m_strUserId, string m_strTitle, string m_strDesc, string m_dateUploadTime)
         {
+            //SortedDictionary<string, string> _dictParam = new SortedDictionary<string, string>();
+            //_dictParam.Add("m_strUserId",m_strUserId);
+            //_dictParam.Add("m_strTitle", m_strTitle);
+            //_dictParam.Add("m_strDesc", m_strDesc);
+            //_dictParam.Add("m_dateUploadTime", m_dateUploadTime);
+            //string _strSql = "insert into knoledge(m_strUserId) values(?)";
+            //int iResult = CommonFunction.OleExecuteNonQuery(_strSql, _dictParam);
+
+            Dictionary<string, string> _dictParam = new Dictionary<string, string>();
+            _dictParam.Add("m_strUserId", m_strUserId);
+            _dictParam.Add("m_strTitle", m_strTitle);
+            _dictParam.Add("m_strDesc", m_strDesc);
+            _dictParam.Add("m_dateUploadTime", m_dateUploadTime);
+            string _strSql = "insert into knoledge(m_strUserId) values(:m_strUserId)";
+            int iResult = CommonFunction.OraExecuteNonQuery(_strSql, _dictParam);
+            //return RedirectToAction("Index");
             return View("Create");
             //return RedirectToAction("Index");
         }

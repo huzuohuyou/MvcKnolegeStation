@@ -8,7 +8,7 @@
 <script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
 <script type="text/javascript" src="../../Scripts/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="../../Scripts/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src=></script>~/Content/JQueryTools/uploadify/jquery.uploadify.js
+<script type="text/javascript" src=></script>
 <link href="~/Content/JQueryTools/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
 <h2>Create</h2>
 
@@ -19,7 +19,7 @@
     <fieldset>
         <legend>KnolegeModels</legend>
          <div class="editor-label">
-           上&nbsp 传&nbsp 人：<input class="createKnoledge"  name="m_strUserId"   />  
+           上&nbsp 传&nbsp 人：<input  name="m_strUserId" class="createKnoledge"  name="m_strUserId"   />  
         </div>
          <div class="editor-label">
            标&nbsp &nbsp &nbsp 题：<input  name="m_strTitle" class="createKnoledge"/>  
@@ -30,19 +30,7 @@
         <div class="editor-label">
         &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<textarea name="m_strDesc" class="KnoledgeDesc">  </textarea>
         </div>
-        <div>
-            <input class="easyui-validatebox" type="hidden" id="Attachment_GUID" name="Attachment_GUID" />
-            <input id="file_upload" name="file_upload" type="file" multiple="multiple">
-            <a href="javascript:void(0)" class="easyui-linkbutton" id="btnUpload" data-options="plain:true,iconCls:'icon-save'"
-                onclick="javascript: $('#file_upload').uploadify('upload', '*')">上传</a> <a href="javascript:void(0)"
-                    class="easyui-linkbutton" id="btnCancelUpload" data-options="plain:true,iconCls:'icon-cancel'"
-                    onclick="javascript: $('#file_upload').uploadify('cancel', '*')">取消</a>
-            <div id="fileQueue" class="fileQueue">
-            </div>
-            <div id="div_files">
-            </div>
-            <br />
-        </div>
+      
         <div class="editor-label">
            上传日期：<input class="easyui-datebox" name="m_dateUploadTime" data-options="required:true,showSeconds:false" value="new Date();" style="width:150px"/>  
         </div>
