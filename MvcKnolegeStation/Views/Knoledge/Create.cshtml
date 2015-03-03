@@ -18,24 +18,22 @@
 
     <fieldset>
         <legend>KnolegeModels</legend>
-         <div class="editor-label">
-           上&nbsp 传&nbsp 人：<input  name="m_strUserId" class="createKnoledge"  name="m_strUserId"   />  
-        </div>
-         <div class="editor-label">
-           标&nbsp &nbsp &nbsp 题：<input  name="m_strTitle" class="createKnoledge"/>  
-        </div>
-         <div class="editor-label">
-           描&nbsp &nbsp &nbsp 述：
+        <div class="editor-label">
+            作者：<input name="m_strUserId" class="createKnoledge" name="m_strUserId" />
         </div>
         <div class="editor-label">
-        &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<textarea name="m_strDesc" class="KnoledgeDesc">  </textarea>
+            标题：<input name="m_strTitle" class="createKnoledge" />
         </div>
-      
         <div class="editor-label">
-           上传日期：<input class="easyui-datebox" name="m_dateUploadTime" data-options="required:true,showSeconds:false" value="new Date();" style="width:150px"/>  
+            描述：
         </div>
-      
-
+        <div class="editor-label">
+            <textarea name="m_strDesc" class="KnoledgeDesc"></textarea>
+        </div>
+        <div class="editor-label">
+            上传日期：<input class="easyui-datebox" name="m_dateUploadTime" data-options="required:true,showSeconds:false"
+                value="new Date();" style="width: 150px" />
+        </div>
         <p>
             <input type="submit" value="Create" />
         </p>

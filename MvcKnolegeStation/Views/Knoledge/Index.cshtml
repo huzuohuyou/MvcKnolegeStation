@@ -9,21 +9,23 @@
 <p>
     @Html.ActionLink("Create New", "CreateItem")
 </p>
-<table class="easyui-datagrid" style="width: 700px; height: 250px">
+<table class="easyui-datagrid" style="width: 800px; height: 250px">
     <thead>
         <tr>
-            <th data-options="field:'itemid',width:120">
-                UserId
+            <th data-options="field:'作者',width:120">
+                作者
             </th>
-            <th data-options="field:'productid',width:120">
-                Title
+            <th data-options="field:'标题',width:120">
+                标题
             </th>
-            <th data-options="field:'listprice',width:120,align:'right'">
-                Desc
+            <th data-options="field:'描述',width:220,align:'center'">
+                描述
             </th>
-          
-            <th data-options="field:'attr1',width:120">
-                UploadTime
+            <th data-options="field:'上传时间',width:150">
+                上传时间
+            </th>
+            <th data-options="field:'热度',width:120,align:'center'">
+                热度
             </th>
         </tr>
     </thead>
@@ -34,13 +36,16 @@
                 @item["m_strUserId"]
             </td>
             <td>
-                @item["m_strTitle"]
+                @Html.ActionLink(@item["m_strTitle"] as string, "Details", new { m_strUserId = @item["m_strUserId"] })
             </td>
             <td>
                 @item["m_strDesc"]
             </td>
             <td>
                 @item["m_dateUploadTime"]
+            </td>
+            <td>
+                @item["m_strHot"]
             </td>
         </tr>
     }

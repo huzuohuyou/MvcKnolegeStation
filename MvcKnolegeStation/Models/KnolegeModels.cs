@@ -27,8 +27,8 @@ namespace MvcKnolegeStation.Models
         public string m_strTitle { get; set; }
         // 描述
         public string m_strDesc { get; set; }
-        // 附件路径
-        public string m_strPath { get; set; }
+        // 热度
+        public string m_strHot { get; set; }
         // 上传日期
         public DateTime m_dateUploadTime { get; set; }
        

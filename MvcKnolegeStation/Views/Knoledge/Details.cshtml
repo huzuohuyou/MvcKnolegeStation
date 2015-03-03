@@ -1,50 +1,35 @@
-﻿@model MvcKnolegeStation.Models.KnolegeModels
-
-@{
+﻿@{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
-
+<link rel="stylesheet" type="text/css" href="../../Scripts/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../Scripts/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../../Scripts/demo/demo.css">
+<script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
+<script type="text/javascript" src="../../Scripts/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../Scripts/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src=""></script>
+<link href="~/Content/JQueryTools/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+<h2>
+    Details</h2>
 <fieldset>
     <legend>KnolegeModels</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.m_strUserId)
+    <div class="editor-label">
+        作者：<input  name="m_strUserId" class="createKnoledge" value=@ViewBag.m_strUserId  />
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.m_strUserId)
+    <div class="editor-label">
+        标题：<input  name="m_strTitle" class="createKnoledge" value=@ViewBag.m_strTitle />
     </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.m_strTitle)
+    <div class="editor-label">
+        描述：
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.m_strTitle)
+    <div class="editor-label">
+        <textarea name="m_strDesc" class="KnoledgeDesc">@ViewBag.m_strDesc</textarea>
     </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.m_strDesc)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.m_strDesc)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.m_strPath)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.m_strPath)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.m_dateUploadTime)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.m_dateUploadTime)
+    <div class="editor-label">
+        日期：<input class="createKnoledge" name="m_dateUploadTime"  value = @ViewBag.m_dateUploadTime > 
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { m_strUserId = @ViewBag.m_strUserId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
