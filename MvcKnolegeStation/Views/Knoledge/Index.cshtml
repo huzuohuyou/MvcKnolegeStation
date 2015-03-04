@@ -9,17 +9,18 @@
 <p>
     @Html.ActionLink("Create New", "CreateItem")
 </p>
-<table class="easyui-datagrid" style="width: 800px; height: 250px">
+<table class="easyui-datagrid" style="width: 1000px; height: 350px">
     <thead>
         <tr>
-            <th data-options="field:'作者',width:120">
-                作者
-            </th>
+            
             <th data-options="field:'标题',width:120">
                 标题
             </th>
-            <th data-options="field:'描述',width:220,align:'center'">
+            <th data-options="field:'描述',width:420,align:'left'">
                 描述
+            </th>
+            <th data-options="field:'作者',width:120">
+                作者
             </th>
             <th data-options="field:'上传时间',width:150">
                 上传时间
@@ -32,14 +33,15 @@
     @foreach (var item in ViewBag.KnoledgeSet)
     {
         <tr>
+          
             <td>
-                @item["m_strUserId"]
-            </td>
-            <td>
-                @Html.ActionLink(@item["m_strTitle"] as string, "Details", new { m_strUserId = @item["m_strUserId"] })
+                @Html.ActionLink(@item["m_strTitle"] as string, "Details", new { Id = @item["Id"] })
             </td>
             <td>
                 @item["m_strDesc"]
+            </td>
+              <td>
+                @item["m_strUserId"]
             </td>
             <td>
                 @item["m_dateUploadTime"]

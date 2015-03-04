@@ -1,6 +1,4 @@
-﻿
-
-@{
+﻿@{
     ViewBag.Title = "Edit";
 }
 <link rel="stylesheet" type="text/css" href="../../Scripts/themes/default/easyui.css">
@@ -9,20 +7,22 @@
 <script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
 <script type="text/javascript" src="../../Scripts/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="../../Scripts/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src=></script>
+<script type="text/javascript" src=""></script>
 <link href="~/Content/JQueryTools/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
-<h2>Edit</h2>
-
-@using (Html.BeginForm()) {
+<h2>
+    Edit</h2>
+@using (Html.BeginForm())
+{
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>KnolegeModels</legend>
         <div class="editor-label">
-            作者：<input  name="m_strUserId" class="createKnoledge" value=@ViewBag.m_strUserId  />
-        </div>
-        <div class="editor-label">
             标题：<input  name="m_strTitle" class="createKnoledge" value=@ViewBag.m_strTitle />
+            作者：<input  name="m_strUserId" class="createKnoledge" value=@ViewBag.m_strUserId />
+            日期：<input class="createKnoledge" name="m_dateUploadTime" style="width:150px" value = @ViewBag.m_dateUploadTime  />
+            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Save" />
         </div>
         <div class="editor-label">
             描述：
@@ -30,19 +30,8 @@
         <div class="editor-label">
             <textarea name="m_strDesc" class="KnoledgeDesc">@ViewBag.m_strDesc</textarea>
         </div>
-        <div class="editor-label">
-            日期：<input class="createKnoledge" name="m_dateUploadTime" value = @ViewBag.m_dateUploadTime style="width:150px" />
-        </div>
-        <p>
-            <input type="submit" value="Save" />
-        </p>
     </fieldset>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -1,0 +1,9 @@
+﻿create table KNOLEDGE
+(
+  M_STRUSERID      VARCHAR2(20),
+  M_STRTITLE       VARCHAR2(20),
+  M_STRDESC        VARCHAR2(200),
+  M_DATEUPLOADTIME DATE,
+  M_STRHOT         VARCHAR2(20),
+  ID               VARCHAR2(50)
+)

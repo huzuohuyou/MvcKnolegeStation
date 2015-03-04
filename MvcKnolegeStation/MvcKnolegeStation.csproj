@@ -232,6 +232,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Logo.jpg" />
     <Content Include="Scripts\demo\accordion\actions.html" />
     <Content Include="Scripts\demo\accordion\ajax.html" />
     <Content Include="Scripts\demo\accordion\basic.html" />
@@ -695,6 +696,7 @@
     <Content Include="Scripts\themes\metro\tree.css" />
     <Content Include="Scripts\themes\metro\validatebox.css" />
     <Content Include="Scripts\themes\metro\window.css" />
+    <Content Include="SQL.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
