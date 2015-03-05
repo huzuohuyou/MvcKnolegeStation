@@ -14,7 +14,7 @@ body {
     border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-family: "微软雅黑,Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
 }
@@ -58,6 +58,25 @@ mark {
 	height:900px;
 	font-size: .15em;
 }
+.fn
+{
+	width:650px;
+	width:90%;
+	}
+
+.favoritem
+{
+	width:50%;
+	display:inline;
+float:left;
+	}
+
+.newitem
+{
+	width:50%;
+	display:inline;
+	float:left;
+	}
 .createKnoledge
 {
 	width:150px; 
@@ -289,23 +308,23 @@ ol.round {
             background: url("../Images/orderedList0.png") no-repeat;
         }
 
-        ol.round li.one {
+        ol.round li.1 {
             background: url("../Images/orderedList1.png") no-repeat;
         }
 
-        ol.round li.two {
+        ol.round li.2 {
             background: url("../Images/orderedList2.png") no-repeat;
         }
 
-        ol.round li.three {
+        ol.round li.3 {
             background: url("../Images/orderedList3.png") no-repeat;
         }
 
-        ol.round li.four {
+        ol.round li.4 {
             background: url("../Images/orderedList4.png") no-repeat;
         }
 
-        ol.round li.five {
+        ol.round li.5 {
             background: url("../Images/orderedList5.png") no-repeat;
         }
 

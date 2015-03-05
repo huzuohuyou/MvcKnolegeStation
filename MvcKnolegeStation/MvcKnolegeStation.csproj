@@ -165,6 +165,7 @@
     <Compile Include="Controllers\DownLoadLogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KnoledgeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -173,6 +174,7 @@
     <Compile Include="Models\DownLoadLogModels.cs" />
     <Compile Include="Models\KnolegeModels.cs" />
     <Compile Include="Models\PublicProperity.cs" />
+    <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -801,6 +803,7 @@
     <None Include="Scripts\demo\treegrid\treegrid_data3.json" />
     <None Include="Scripts\demo\tree\tree_data1.json" />
     <None Include="Scripts\demo\tree\tree_data2.json" />
+    <Content Include="Views\User\Login.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -9,9 +9,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @using (Html.BeginForm("Search", "Knoledge"))
-    {
-        <header>
+    <header>
             <div class="content-wrapper">
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("KnoledgeStation", "Index", "Home")</p>
@@ -20,34 +18,35 @@
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
+                     @using (Html.BeginForm("Search", "Knoledge"))
+                     {
                     <nav>
                         <ul id="menu">
                          <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("AllItem", "Index", "Knoledge")</li>
+                            <li>@Html.ActionLink("上传统计", "About", "Home")</li>
+                            <li>@Html.ActionLink("所有条目", "Index", "Knoledge")</li>
                             <input name="search" type='text' class="createKnoledge" />
                             <input class="sb" type="submit" value="Search" />
                         </ul>
                     </nav>
+                     }
                 </div>
             </div>
         </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
             </section>
-        </div>
-        <footer>
+    </div>
+    <footer>
             <div class="content-wrapper">
                 <div class="float-left">
                     <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
                 </div>
             </div>
         </footer>
-
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    }
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -7,3 +7,11 @@
   M_STRHOT         VARCHAR2(20),
   ID               VARCHAR2(50)
 )
+
+create table KUSER
+(
+  USERID   VARCHAR2(20),
+  USERNAME VARCHAR2(20),
+  PASSWORD VARCHAR2(20),
+  ROLEID   VARCHAR2(20)
+)

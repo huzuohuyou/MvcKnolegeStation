@@ -13,7 +13,7 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("CreateItem", "Knoledge"))
 {
     @Html.ValidationSummary(true)
 
@@ -21,7 +21,7 @@
         <legend>KnolegeModels</legend>
         <div class="editor-label">
             标题：<input name="m_strTitle" class="createKnoledge" />
-            作者：<input name="m_strUserId" class="createKnoledge" name="m_strUserId" />
+            作者：<input name="m_strUserId" class="createKnoledge"  />
             日期：<input class="easyui-datebox" name="m_dateUploadTime" data-options="required:true,showSeconds:false"
                 value="new Date();" style="width: 150px" />
             @Html.ActionLink("Back to List", "Index")

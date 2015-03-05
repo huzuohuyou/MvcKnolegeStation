@@ -20,7 +20,6 @@ namespace MvcKnolegeStation.Controllers
         public ActionResult Index()
         {
             string _strSql = "select * from knoledge";
-            //DataTable _dtKnoledgeSet = CommonFunction.OleExecuteBySQL(_strSql, new SortedDictionary<string, string>(), "KnoledgeSet");
             DataTable _dtKnoledgeSet = CommonFunction.OraExecuteBySQL(_strSql, new Dictionary<string, string>(), "KnoledgeSet");
             PublicProperity.m_dtKnoledges = _dtKnoledgeSet;
             List<DataRow> _listKnoledgeName = new List<DataRow>();
@@ -62,7 +61,7 @@ namespace MvcKnolegeStation.Controllers
 
         public ActionResult Details(string Id)
         {
-            SetCurrentModel(Id);
+            //SetCurrentModel(Id);
             IncreaseHot(Id);
             DataRow[] _drKnoledge = PublicProperity.m_dtKnoledges.Select("Id='" + Id + "'");
             if (1==_drKnoledge.Length)
@@ -115,6 +114,11 @@ namespace MvcKnolegeStation.Controllers
 
         public ActionResult CreateItem(string m_strUserId, string m_strTitle, string m_strDesc, string m_dateUploadTime)
         {
+            if (true)
+            {
+                //UserModels um = new UserModels();
+                //um.UserId1=
+            }
             Dictionary<string, string> _dictParam = new Dictionary<string, string>();
             _dictParam.Add("Id", Guid.NewGuid().ToString());
             _dictParam.Add("m_strUserId", m_strUserId);
@@ -132,8 +136,19 @@ namespace MvcKnolegeStation.Controllers
         /// <param name="Id">KnoledgeId</param>
         public void SetCurrentModel(string Id)
         {
-            DataRow[] _drKnoledge = PublicProperity.m_dtKnoledges.Select("Id='" + Id + "'");
-
+            DataRow[] _drKnoledge = null;
+            if (null != PublicProperity.m_dtKnoledges)
+            {
+                _drKnoledge = PublicProperity.m_dtKnoledges.Select("Id='" + Id + "'");
+            }
+            else if (null != PublicProperity.m_dtHotKnoledges)
+            {
+                _drKnoledge = PublicProperity.m_dtHotKnoledges.Select("Id='" + Id + "'");
+            }
+            else
+            {
+                return;
+            }
             KnoledgeModels km = new KnoledgeModels();
             if (1 == _drKnoledge.Length)
             {

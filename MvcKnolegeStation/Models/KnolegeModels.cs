@@ -20,7 +20,7 @@ namespace MvcKnolegeStation.Models
     {
 
         // 主键
-        private int Id;
+        private string Id;
         // 上传人
         private string m_strUserId;
         // 标题
@@ -34,7 +34,7 @@ namespace MvcKnolegeStation.Models
 
         public void SetID(string p_iId)
         {
-            Id = int.Parse(p_iId);
+            Id= p_iId;
         }
 
         public void SetM_STRUSERID(string p_strUserId)
