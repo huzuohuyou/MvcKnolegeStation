@@ -13,5 +13,7 @@ namespace MvcKnolegeStation.Models
         public static DataTable m_dtKnoledges = null;
         public static DataTable m_dtHotKnoledges = null;
         public static KnoledgeModels m_curModel = null;
+
+
     }
 }

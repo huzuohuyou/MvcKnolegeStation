@@ -28,6 +28,8 @@ namespace MvcKnolegeStation.Controllers
                 _listKnoledgeName.Add(item);
             }
             ViewBag.KnoledgeSet = _listKnoledgeName;
+            UpdateSession("KnoledgeSet", _dtKnoledgeSet);
+            //Session.Add("KnoledgeSet", _dtKnoledgeSet);
             return View();
         }
 
@@ -53,7 +55,14 @@ namespace MvcKnolegeStation.Controllers
                 _listKnoledgeName.Add(item);
             }
             ViewBag.KnoledgeSet = _listKnoledgeName;
+            Session.Add("SearchKnoledgeSet", _dtKnoledgeSet);
             return View("Index");
+        }
+
+        public ActionResult GetArticleClass(int id = 0)
+        {
+            string knoledge = "{'id':'1','name':'hh'}";
+            return Json(knoledge); ;
         }
 
         //
@@ -73,6 +82,13 @@ namespace MvcKnolegeStation.Controllers
                 ViewBag.m_strHot = _drKnoledge[0]["m_strHot"].ToString();
                 ViewBag.m_dateUploadTime = _drKnoledge[0]["m_dateUploadTime"].ToString();
             }
+            List<string> articleClass = new List<string> { "1", "2", "3", "4" };
+            SelectList sl = new SelectList(articleClass);
+            ViewData.Add("CategroyID", sl);
+
+            //List<string> articleClass1 = new List<string> { };
+            //SelectList sl1 = new SelectList(articleClass1);
+            //ViewData.Add("CategroyID2", sl1);
             return View();
         }
 
@@ -112,20 +128,59 @@ namespace MvcKnolegeStation.Controllers
             return View(knolegemodels);
         }
 
+        /// <summary>
+        /// 更新Sesion
+        /// </summary>
+        /// <param name="p_strName">keys</param>
+        /// <param name="p_objValue">value</param>
+        public void UpdateSession(string p_strName, object p_objValue)
+        {
+            try
+            {
+                Session.Remove(p_strName);
+                Session.Add(p_strName, p_objValue);
+            }
+            catch (Exception exp)
+            {
+                CommonFunction.WriteLog(exp, "UpdateSession");
+            }
+        }
+
+        public ActionResult Combox()
+        {
+            return View("Details");
+        }
+
+
+        public ActionResult Ajax() {
+            ViewBag.ajax = "第一个ajax";
+            return View("Details");
+        }
+
+        //[My("wuhailong")]
         public ActionResult CreateItem(string m_strUserId, string m_strTitle, string m_strDesc, string m_dateUploadTime)
         {
-            if (true)
-            {
-                //UserModels um = new UserModels();
-                //um.UserId1=
-            }
+            //MyAttribute ma = null;
+            //object[] cas = typeof(KnoledgeController).GetCustomAttributes(true);
+            //foreach (var item in cas)
+            //{
+            //    if (item is MyAttribute)
+            //    {
+            //        Console.WriteLine(ma.name);
+            //    }
+            //}
+            //if (true)
+            //{
+            //    //UserModels um = new UserModels();
+            //    //um.UserId1=
+            //}
             Dictionary<string, string> _dictParam = new Dictionary<string, string>();
             _dictParam.Add("Id", Guid.NewGuid().ToString());
             _dictParam.Add("m_strUserId", m_strUserId);
             _dictParam.Add("m_strTitle", m_strTitle);
             _dictParam.Add("m_strDesc", m_strDesc);
             _dictParam.Add("m_dateUploadTime", m_dateUploadTime);
-            string _strSql = "insert into knoledge(Id,m_strUserId,m_strTitle,m_strDesc,m_dateUploadTime) values(:Id,:m_strUserId,:m_strTitle,:m_strDesc,to_date(:m_dateUploadTime,'yyyy-MM-dd'))";
+            string _strSql = "insert into knoledge(Id,m_strUserId,m_strTitle,m_strDesc,m_dateUploadTime,m_strhot) values(:Id,:m_strUserId,:m_strTitle,:m_strDesc,to_date(:m_dateUploadTime,'yyyy-MM-dd'),0)";
             int iResult = CommonFunction.OraExecuteNonQuery(_strSql, _dictParam);
             return View("Create");
         }

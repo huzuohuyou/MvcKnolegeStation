@@ -1,16 +1,12 @@
 ﻿@{
     ViewBag.Title = "Edit";
 }
-<link rel="stylesheet" type="text/css" href="../../Scripts/themes/default/easyui.css">
-<link rel="stylesheet" type="text/css" href="../../Scripts/themes/icon.css">
-<link rel="stylesheet" type="text/css" href="../../Scripts/demo/demo.css">
-<script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
-<script type="text/javascript" src="../../Scripts/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="../../Scripts/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src=""></script>
-<link href="~/Content/JQueryTools/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
 <h2>
     Edit</h2>
+<!-- wysihtml5 parser rules -->
+<script src="../../Scripts/advanced.js"></script>
+<!-- Library -->
+<script src="../../Scripts/wysihtml5-0.3.0.min.js"></script>
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
@@ -18,7 +14,7 @@
     <fieldset>
         <legend>KnolegeModels</legend>
         <div class="editor-label">
-            标题：<input  name="m_strTitle" class="createKnoledge" value=@ViewBag.m_strTitle />
+            标题：<input  name="m_strTitle" class="createKnoledge" value= @ViewBag.m_strTitle />
             作者：<input  name="m_strUserId" class="createKnoledge" value=@ViewBag.m_strUserId />
             日期：<input class="createKnoledge" name="m_dateUploadTime" style="width:150px" value = @ViewBag.m_dateUploadTime  />
             @Html.ActionLink("Back to List", "Index")
@@ -35,3 +31,12 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<link rel="stylesheet" type="text/css" href="../../Scripts/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../Scripts/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../../Scripts/demo/demo.css">
+<script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
+<script type="text/javascript" src="../../Scripts/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../Scripts/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src=""></script>
+@*<link href="~/Content/JQueryTools/uploadify/uploadify.css" rel="stylesheet" type="text/css" />*@
+

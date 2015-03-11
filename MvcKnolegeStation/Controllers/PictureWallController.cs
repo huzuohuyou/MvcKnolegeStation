@@ -3,50 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ToolFunction;
 using System.Data;
+using ToolFunction;
+using MvcKnolegeStation.Models;
 
 namespace MvcKnolegeStation.Controllers
 {
-    public class UserController : Controller
+    public class PictureWallController : Controller
     {
         //
-        // GET: /User/
+        // GET: /PictureWall/
 
         public ActionResult Index()
         {
+            string _strSql = "select * from picturewall";
+            DataTable _dtPictures = CommonFunction.OraExecuteBySQL(_strSql, new Dictionary<string, string>(), "Pictures");
+            PublicProperity.m_dtKnoledges = _dtPictures;
+            List<DataRow> _listPicture = new List<DataRow>();
+            foreach (DataRow item in _dtPictures.Rows)
+            {
+                _listPicture.Add(item);
+            }
+            ViewBag.Pictures = _listPicture;
+            Session.Add("Pictures", _listPicture);
             return View();
         }
 
         //
-        // GET: /User/Details/5
+        // GET: /PictureWall/Details/5
 
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        public ActionResult Logon(string UserName, string Password)
-        {
-            
-            string _strTableName = "";
-            string _strUserName = "";
-            string _strPassword = "";
-            string _strSQL = "select * from " + _strTableName + " where " + _strUserName + " = " + UserName + " and " + _strPassword + " = " + Password;
-            Dictionary<string,string> _dictParam = new Dictionary<string,string>();
-            _dictParam.Add(_strUserName,UserName);
-            _dictParam.Add(_strPassword,Password);
-            DataTable _dtUser =  CommonFunction.OraExecuteBySQL(_strSQL, _dictParam, "User");
-            Session.Add("user", _dtUser);
-            return View();
-        }
         //
-        // GET: /User/Create
+        // GET: /PictureWall/Create
 
         public ActionResult Create()
         {
@@ -54,7 +46,7 @@ namespace MvcKnolegeStation.Controllers
         }
 
         //
-        // POST: /User/Create
+        // POST: /PictureWall/Create
 
         [HttpPost]
         public ActionResult Create(FormCollection collection)
@@ -72,7 +64,7 @@ namespace MvcKnolegeStation.Controllers
         }
 
         //
-        // GET: /User/Edit/5
+        // GET: /PictureWall/Edit/5
 
         public ActionResult Edit(int id)
         {
@@ -80,7 +72,7 @@ namespace MvcKnolegeStation.Controllers
         }
 
         //
-        // POST: /User/Edit/5
+        // POST: /PictureWall/Edit/5
 
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
@@ -98,7 +90,7 @@ namespace MvcKnolegeStation.Controllers
         }
 
         //
-        // GET: /User/Delete/5
+        // GET: /PictureWall/Delete/5
 
         public ActionResult Delete(int id)
         {
@@ -106,7 +98,7 @@ namespace MvcKnolegeStation.Controllers
         }
 
         //
-        // POST: /User/Delete/5
+        // POST: /PictureWall/Delete/5
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)

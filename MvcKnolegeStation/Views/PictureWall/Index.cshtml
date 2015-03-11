@@ -1,0 +1,21 @@
+﻿
+<link rel="stylesheet" type="text/css" href="../../Scripts/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../Scripts/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../../Scripts/demo/demo.css">
+<script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
+<script type="text/javascript" src="../../Scripts/jquery.easyui.min.js" ></script>
+<link href="../../Content/styles.css" rel="stylesheet" />
+<script type="text/javascript" src="../../Scripts/drag.js" ></script>
+@Html.ActionLink("Create New", "Create")
+@foreach (var item in ViewBag.Pictures)
+{
+    
+    <div class="photo_frame"  name="dr" id ="photo0@item["id"]">
+        <img src=@item["path"] width="350" height="200" alt="fuck you"  alt="图片" />
+        <p>
+            @item["message"]</p>
+        <p>
+            作者: @item["userid"]</p>
+    </div>
+}
+

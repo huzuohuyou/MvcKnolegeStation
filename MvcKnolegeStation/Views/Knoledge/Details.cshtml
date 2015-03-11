@@ -7,13 +7,23 @@
 <script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
 <script type="text/javascript" src="../../Scripts/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="../../Scripts/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src=""></script>
-<link href="~/Content/JQueryTools/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../Scripts/Ajax.js">
+</script>
+@*<link href="~/Content/JQueryTools/uploadify/uploadify.css" rel="stylesheet" type="text/css" />*@
 <h2>
     Details</h2>
 <fieldset>
     <legend>KnolegeModels</legend>
     <div class="editor-label">
+        <input  id="Ajax" name="Ajax" class="createKnoledge" value=@ViewBag.ajax  />
+        @Html.ActionLink("Ajax", "Ajax", new AjaxOptions
+   {
+       UpdateTargetId = "Ajax",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+   })
+       @* @Html.DropDownList("CategroyID", (IEnumerable<SelectListItem>)ViewBag.CategoryID, "请选择...", new { id = "CategroyID", onchange = "GetArticleClass(this)" })
+        <select id ="ArticleClassID2"></select>*@
         <input type="hidden"  name="Id" class="createKnoledge" value=@ViewBag.Id  />
         标题：<input  name="m_strTitle" class="createKnoledge" value=@ViewBag.m_strTitle />
         作者：<input  name="m_strUserId" class="createKnoledge" value=@ViewBag.m_strUserId  />
