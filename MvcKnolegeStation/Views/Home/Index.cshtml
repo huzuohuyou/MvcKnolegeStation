@@ -1,37 +1,64 @@
 ﻿@*@{
     ViewBag.Title = "Home Page";
 }*@
-@section featured {
-  @*  <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
+@section favoritem {
+    <!-- Page Content -->
+    <a name="services"></a>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix">
+                    </div>
+                    <div class="favoritem">
+                        <h3>
+                            Favorite Items：</h3>
+                        @foreach (var item in ViewBag.m_dtHotKnoledges)
+                        {
+                            <div>
+                                <h5>@item["m_strTitle"]</h5>
+                                @item["m_strDesc"]
+                                @Html.ActionLink("Learn more…", "Details", "Knoledge", new { Id = @item["Id"] }, null)
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="../../Images/ipad.png" alt="">
+                </div>
+            </div>
         </div>
-    </section>*@
+        <!-- /.container -->
+    </div>
 }
-<div class="favoritem">
-    <h3>
-        Favorite Items：</h3>
-    @foreach (var item in ViewBag.m_dtHotKnoledges)
-    {
-        <div>
-            <h5>@item["m_strTitle"]</h5>
-            @item["m_strDesc"]
-            @Html.ActionLink("Learn more…", "Details", "Knoledge", new { Id = @item["Id"] }, null)
+@section newitem {
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix">
+                    </div>
+                    <div class="newitem">
+                        <h3>
+                            Newest Items：</h3>
+                        @foreach (var item in ViewBag.m_dtNewHotKnoledges)
+                        {
+                            <div>
+                                <h5>@item["m_strTitle"]</h5>
+                                @item["m_strDesc"]
+                                @Html.ActionLink("Learn more…", "Details", "Knoledge", new { Id = @item["Id"] }, null)
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="../../Images/dog.png" alt="">
+                </div>
+            </div>
         </div>
-    }
-</div>
-<div class="newitem">
-    <h3>
-        Newest Items：</h3>
-    @foreach (var item in ViewBag.m_dtNewHotKnoledges)
-    {
-        <div>
-            <h5>@item["m_strTitle"]</h5>
-            @item["m_strDesc"]
-            @Html.ActionLink("Learn more…", "Details", "Knoledge", new { Id = @item["Id"] }, null)
-        </div>
-    }
-</div>
+        <!-- /.container -->
+    </div>
+    <!-- /.content-section-b -->
+}

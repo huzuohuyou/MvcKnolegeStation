@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcKnolegeStation", "MvcKnolegeStation\MvcKnolegeStation.csproj", "{384280A6-8517-4D70-BD9C-3C19ECA5C40A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolFunction", "..\ToolFunction\ToolFunction.csproj", "{F26E3EAB-1187-4C91-A41E-2BE3D0FFE4B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolFunction", "..\ToolFunction\ToolFunction.csproj", "{CC31A36E-5955-4F86-9B49-6ECC79949490}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,10 @@ Global
 		{384280A6-8517-4D70-BD9C-3C19ECA5C40A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{384280A6-8517-4D70-BD9C-3C19ECA5C40A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{384280A6-8517-4D70-BD9C-3C19ECA5C40A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F26E3EAB-1187-4C91-A41E-2BE3D0FFE4B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F26E3EAB-1187-4C91-A41E-2BE3D0FFE4B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F26E3EAB-1187-4C91-A41E-2BE3D0FFE4B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F26E3EAB-1187-4C91-A41E-2BE3D0FFE4B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC31A36E-5955-4F86-9B49-6ECC79949490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC31A36E-5955-4F86-9B49-6ECC79949490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC31A36E-5955-4F86-9B49-6ECC79949490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC31A36E-5955-4F86-9B49-6ECC79949490}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
