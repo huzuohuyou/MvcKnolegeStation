@@ -6,22 +6,13 @@
 <link rel="stylesheet" type="text/css" href="../../Scripts/demo/demo.css">
 <script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
 <script type="text/javascript" src="../../Scripts/jquery.easyui.min.js"></script>
-<!-- Bootstrap Core CSS -->
-<link href="../../Content/bootstrap.min.css" rel="stylesheet">
-<!-- Custom CSS -->
-<link href="../../Content/landing-page.css" rel="stylesheet">
-<!-- Custom Fonts -->
-<link href="../../Content/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
-    rel="stylesheet" type="text/css">
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<div class="panel-heading">
-    面板标题</div>
-<table class="table">
+<table class="easyui-datagrid" style="width: 1000px; height: 350px">
     <thead>
         <tr>
+            
             <th data-options="field:'标题',width:120">
                 标题
             </th>
@@ -42,13 +33,14 @@
     @foreach (var item in ViewBag.KnoledgeSet)
     {
         <tr>
+          
             <td>
                 @Html.ActionLink(@item["m_strTitle"] as string, "Details", new { Id = @item["Id"] })
             </td>
             <td>
                 @item["m_strDesc"]
             </td>
-            <td>
+              <td>
                 @item["m_strUserId"]
             </td>
             <td>
@@ -60,7 +52,3 @@
         </tr>
     }
 </table>
-<!-- jQuery -->
-<script src="../../Scripts/jquery.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="../../Scripts/bootstrap.min.js"></script>

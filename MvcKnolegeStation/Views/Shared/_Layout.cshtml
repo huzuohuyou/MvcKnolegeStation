@@ -7,120 +7,33 @@
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <!-- Bootstrap Core CSS -->
-    <link href="../../Content/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="../../Content/landing-page.css" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="../../Content/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
-        rel="stylesheet" type="text/css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              @using (Html.BeginForm("Search", "Knoledge"))
-              {
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#about">@Html.ActionLink("Home", "Index", "Home")</a>
-                    </li>
-                    <li>
-                        <a href="#services">@Html.ActionLink("照片墙", "Index", "PictureWall")</a>
-                    </li>
-                    <li>
-                        <a href="#contact">@Html.ActionLink("上传统计", "About", "Home")</a>
-                    </li>
-                    <li>
-                        <a href="#contact">@Html.ActionLink("所有条目", "Index", "Knoledge")</a>
-                    </li>
-                     <li>
-                       <input name="search" type='text'  />
-                    </li>
-                     <li>
-                       <input  type="submit" value="Search" />
-                    </li>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">@Html.ActionLink("KnoledgeStation", "Index", "Home")</p>
+        </div>
+        <div class="float-right">
+            @using (Html.BeginForm("Search", "Knoledge"))
+            {
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("照片墙", "Index", "PictureWall")</li>
+                    <li>@Html.ActionLink("上传统计", "About", "Home")</li>
+                    <li>@Html.ActionLink("所有条目", "Index", "Knoledge")</li>
+                    <input name="search" type='text' class="createKnoledge" />
+                    <input class="sb" type="submit" value="Search" />
                 </ul>
-              }
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    <!-- Header -->
-    <a name="about"></a>
-    <div class="intro-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                        <h1>
-                            Knowledge base</h1>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
-    @RenderSection("favoritem", required: false)
-    @RenderSection("newitem", required: false)
-    <div class="container">
-        @RenderBody()
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
     </div>
-    <a name="contact"></a>
-    <div class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>
-                        Knoledge Base </h2>
-                </div>
-                
-            </div>
-        </div>
-        <!-- /.container -->
-    </div>
-    <!-- /.banner -->
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#services">Favorite Items</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#contact">Newest Items</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
-    </footer>
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
-    <!-- jQuery -->
-    <script src="../../Scripts/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../../Scripts/bootstrap.min.js"></script>
 </body>
 </html>
